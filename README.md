@@ -2,9 +2,9 @@
 
 > **Level 1 PLC project** — a hands-on tutorial for modeling a pivot arm and its I/O control logic.
 
-![Project status](https://img.shields.io/badge/Project-Educational-DF806A?style=flat-square)
-![Focus](https://img.shields.io/badge/Focus-PLC%20%7C%20Industrial%20Automation-26313B?style=flat-square)
-![Tools](https://img.shields.io/badge/Tools-Factory%20I%2FO%20%7C%20TIA%20Portal-526B66?style=flat-square)
+![Project status](https://img.shields.io/badge/PROJECT-EDUCATIONAL-D27961?style=for-the-badge&labelColor=202A32)
+![Focus](https://img.shields.io/badge/FOCUS-INDUSTRIAL%20AUTOMATION-557C78?style=for-the-badge&labelColor=202A32)
+![Tools](https://img.shields.io/badge/TOOLS-FACTORY%20I%2FO%20%7C%20TIA%20PORTAL-718895?style=for-the-badge&labelColor=202A32)
 
 ## Project overview
 
@@ -22,9 +22,26 @@ This project is a learning model, not a validated production control design. Rea
 
 ```mermaid
 flowchart LR
-    A[Factory I/O scene<br/>Pivot arm and simulated devices] -->|Input signals| B[Siemens PLC<br/>TIA Portal ladder logic]
-    B -->|Output commands| A
-    C[Operator or simulation events] --> A
+    O([Operator / simulation event]) --> S
+    subgraph SIM[FACTORY I/O · SIMULATION]
+        S[Pivot arm<br/>and simulated devices]
+    end
+    subgraph PLC[SIEMENS · TIA PORTAL]
+        L[Ladder logic<br/>control decisions]
+    end
+    S -->|Sensor states · PLC inputs| L
+    L -->|Actuator commands · PLC outputs| S
+    classDef event fill:#F7F4F0,stroke:#D27961,color:#202A32,stroke-width:2px;
+    classDef scene fill:#E8F0EF,stroke:#557C78,color:#202A32,stroke-width:2px;
+    classDef logic fill:#EAF0F4,stroke:#718895,color:#202A32,stroke-width:2px;
+    class O event;
+    class S scene;
+    class L logic;
+    style SIM fill:#F5F8F7,stroke:#557C78,stroke-width:1.5px,color:#202A32
+    style PLC fill:#F5F7F9,stroke:#718895,stroke-width:1.5px,color:#202A32
+    linkStyle 0 stroke:#D27961,stroke-width:2px
+    linkStyle 1 stroke:#557C78,stroke-width:2.5px
+    linkStyle 2 stroke:#718895,stroke-width:2.5px
 ```
 
 The intended information path is:
