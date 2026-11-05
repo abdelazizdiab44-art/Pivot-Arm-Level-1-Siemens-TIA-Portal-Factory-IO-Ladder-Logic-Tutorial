@@ -1,1 +1,1 @@
-# PLC-Sorting-System-Level-1-Siemens-TIA-Portal-Factory-IO-Ladder-Logic-Tutorial-1-
+Pivot-Arm-Level-1-Siemens-TIA-Portal-Factory-IO-Ladder-Logic-Tutorial
